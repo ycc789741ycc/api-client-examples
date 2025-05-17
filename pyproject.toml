@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "api-client-examples"
+version = "0.1.0"
+description = ""
+authors = ["Yoshi Gao <yoshi4868686@gmail.com>"]
+readme = "README.md"
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+select = [
+  "F",    # pyflakes
+  "E",    # pycodestyle (errors)
+  "W",    # pycodestyle (warnings)
+  "I",    # isort
+  "N",    # pep8-naming
+  "D",    # pydocstyle
+  "UP",   # pyupgrade
+  "B",    # bugbear
+]
+ignore = ["E501", "D100", "D104"]
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.2.0"
+ruff = "^0.11.10"
+
+
+[tool.poetry.group.aws.dependencies]
+boto3 = "^1.38.18"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
